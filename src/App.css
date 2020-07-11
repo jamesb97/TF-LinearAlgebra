@@ -1,0 +1,18 @@
+.App {
+  text-align: center;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.size {
+  position: fixed;
+  top: 0;
+  left: 50;
+}
+.container h2 {
+  justify-content: space-around;
+  margin-top: -0.5%;
+}

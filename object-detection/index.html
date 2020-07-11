@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>TF Detection</title>
+    <h3>Object Detection using Tensorflow</h3>
+    </head>
+    <body>
+
+    
+<!--Load Tensorflow.JS. This is required to use coco-ssd model.-->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+<!--Load the Tensorflow.JS Node Package-->
+<!--<script src="https://cdn.jsdeliver.net/npm/@tensorflow/tfjs-node"></script>-->
+<!--Load the coco-ssd model-->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+
+<!--Be sure that CORS settings allows reading the image-->
+<img id="img" src="natureplant.jpg" alt="plant"/>
+<img id="image" src="smartwatch.jpg" style="max-width: 40%;" alt="watch"/>
+
+<script type="text/javascript">
+    const img = document.getElementById('img');
+    
+    //Load Model
+    cocoSsd.load().then(model => {
+        //detect objects in the image
+        model.detect(img).then(predictions => {
+            console.log('Predictions: ', predictions);
+        });
+    });
+    //Load the model
+    const image = document.getElementById('image');
+    cocoSsd.load().then(model => {
+        //detect objects in the image
+        model.detect(image).then(predictions => {
+            console.log('Predictions: ', predictions);
+        });
+    });
+</script>
+<script src="index.js"></script>
+</body>
+</html>
